@@ -7,15 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     p "********************************"
     p request.env['omniauth.auth']
     p "********************************"
-    #<OmniAuth::AuthHash credentials=
-    #<OmniAuth::AuthHash expires=true expires_at=1536372457 token="*********">
-    #extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash email="romancedandelion@gmail.com" id="***********" name="Takhee Kim">>
-    #info=#<OmniAuth::AuthHash::InfoHash
-    #   email="romancedandelion@gmail.com"
-    #   image="http://graph.facebook.com/v2.10/1735946999835206/picture"
-    #   name="Takhee Kim">
-    # provider="facebook"
-    # uid="************">
+
     auth = env['omniauth.auth']
     @user = User.find_auth(auth, current_user)
     if @user.persisted?
@@ -29,15 +21,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     p "********************************"
     p request.env['omniauth.auth']
     p "********************************"
-    #<OmniAuth::AuthHash credentials=
-    #<OmniAuth::AuthHash expires=true expires_at=1536372457 token="*********">
-    #extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash email="romancedandelion@gmail.com" id="***********" name="Takhee Kim">>
-    #info=#<OmniAuth::AuthHash::InfoHash
-    #   email="romancedandelion@gmail.com"
-    #   image="http://graph.facebook.com/v2.10/1735946999835206/picture"
-    #   name="Takhee Kim">
-    # provider="facebook"
-    # uid="************">
+
     auth = env['omniauth.auth']
     @user = User.find_auth(auth, current_user)
     if @user.persisted?

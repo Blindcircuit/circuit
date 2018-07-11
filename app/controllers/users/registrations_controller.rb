@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  
   def info
     if request.patch? && params[:user]
       if current_user.update(params.require(:user).permit(:email))
