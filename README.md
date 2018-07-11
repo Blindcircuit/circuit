@@ -4,6 +4,9 @@
 bundle install
 bundle exec figaro install   # => .gitignore 생성 및 application.yml에 키 값 삽입
 rake db:migrate
+
+git branch seon  # => seon 브렌치 명
+git checkout seon # => branch로 이동
 ```
 1. user 테이블 수정 - 선우
 2. track 테이블 생성 및 데이터 추가
