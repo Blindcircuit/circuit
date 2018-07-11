@@ -12,10 +12,12 @@ class User < ActiveRecord::Base
 
 # default img 넣는 메소드
   def profile_img_default
+    # 프로필 이미지가 없으면 default 이미지로 넣는다.
     if self.profile_img.nil?
       self.profile_img = "https://cdn.pixabay.com/photo/2014/12/17/14/20/summer-anemone-571531_960_720.jpg"
     end
   end
+
   # User.find_auth
   def self.find_auth(auth, signed_in_resource=nil)
     # Identity가 있는지?
