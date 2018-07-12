@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     match 'users/info' => 'users/registrations#info', via: [:get, :patch]
   end
 
-  root 'posts#index'
+  # root 'posts#index'
   resources :posts
   post '/tinymce_assets' => 'tinymce_assets#create'
   put '/posts/:post_id/like' => 'likes#create'
@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   post '/posts/:post_id/comments' => 'comments#create'
   delete '/comments/:comment_id' => 'comments#destroy', as: 'destroy_comment'
 
+  #web template
+  root 'circuit#index'
+  get 'circuit/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
