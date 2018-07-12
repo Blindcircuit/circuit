@@ -19,4 +19,7 @@ csv 파일 반영 방법
 - 입력하는 코드 seeds.rb에 삽입
 - console에서 rake db:seed 로 삽입
 - 반영 완료
+
+다른 branch에서 작업하고 커밋하거나 푸쉬한경우
+다른데서 올릴경우 git pull을 하고 올려야 한다.
 ```

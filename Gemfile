@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
-
+# 언어설정(지역)
+gem 'rails-i18n', '~> 4.0'
+gem 'devise-i18n'
+# aws 사용
 gem 'aws-sdk-s3'
 # 환경변수 관리
 gem 'figaro'
