@@ -14,4 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require tinymce-jquery
-//= require_tree .
+
+//= require bootstrap.min
+//= require jquery.inview.min
+//= require tweetie.min
+//= require jquery.flexslider-min
+//= require owl.carousel.min
+//= require isotope.pkgd.min
+//= require imagesloaded.pkgd.min
+//= require jquery.nouislider.all.min
+//= require scripts
