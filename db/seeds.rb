@@ -6,10 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
+#sample
+# CSV.foreach(Rails.root.join('db', 'seed.csv'), {headers: true, encoding: "UTF-8"}) do |row|
+#   Post.create! row.to_hash
+# end
 
-CSV.foreach(Rails.root.join('db', 'seed.csv'), {headers: true, encoding: "UTF-8"}) do |row|
-  Post.create! row.to_hash
+CSV.foreach(Rails.root.join('db', 'track.csv'), {headers: true, encoding: "UTF-8"}) do |row|
+  Track.create! row.to_hash
 end
+
+
 
 # require 'faker'
 #

@@ -7,7 +7,7 @@
     <%= f.input :name, required: true %>
     <%= f.input :nickname, required: true%>
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password, required: true, hint: ("최소#{@minimum_password_length}자리 이상으로 설정해주세요" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
 
