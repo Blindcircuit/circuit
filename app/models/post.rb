@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  has_many :comments
+  #게시글 삭제시 댓글을 같이 삭제함
+  has_many :comments, dependent: :destroy
   belongs_to :user
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
