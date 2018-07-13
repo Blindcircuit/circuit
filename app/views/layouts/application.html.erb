@@ -42,28 +42,96 @@
 </head>
 <body>
 <%# gravatar(current_user) %>
-<% flash.each do |key, value| %>
+<!-- <% flash.each do |key, value| %>
   <div class="<%= flash_message(key) %>" role="alert">
     <%= value %>
   </div>
-<% end %>
+<% end %> -->
 
-<% if user_signed_in? %>
-  <%= image_tag current_user.profile_img, class: "rounded-circle", width: "80"%>
-  <span><%= current_user.email %></span>
-  <%= link_to '로그아웃', destroy_user_session_path, method: :delete %>
-<% else %>
-  <!-- <a href="/users/sign_in">로그인</a> -->
-  <%= link_to '로그인', new_user_session_path %>
-  <!-- <a href="/users/sign_up">회원가입</a> -->
-  <%= link_to '회원가입', new_user_registration_path %>
-<% end %>
+<header class="header">
+  <div class="container">
+    <div class="navigation clearfix" style="background: #000000;" >
+      <div class="logo" style="background-color: black"><a href="/"><img src="<%=asset_path 'logo1.png'%>" alt="Automan" class="img-responsive" style="height: 80px;"></a></div> <!-- end .logo -->
+      <nav class="main-nav">
+        <ul class="list-unstyled">
+          <li class="active">
+            <a href="/">Home</a>
+            <ul>
+              <li><a href="index.html">Homepage 1</a></li>
+              <li><a href="homepage2.html">Homepage 2</a></li>
+              <li><a href="homepage3.html">Homepage 3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="add-car-details.html">Add Car</a>
+            <ul>
+              <li><a href="add-car-details.html">Add Car Details</a></li>
+              <li><a href="choose-specification.html">Choose Specification</a></li>
+              <li><a href="contact-details.html">Contact Details</a></li>
+              <li><a href="photos-videos.html">Photos Videos</a></li>
+              <li><a href="pay-publish.html">Pay Publish</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="listing-grid-view.html">Cars</a>
+            <ul>
+              <li><a href="listing-grid-view.html">Listing Grid View</a></li>
+              <li><a href="listing-list-view.html">Listing List View</a></li>
+              <li><a href="details.html">Details 1</a></li>
+              <li><a href="details-1.html">Details 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="compare.html">Compare</a>
+            <ul>
+              <li><a href="compare.html">Compare</a></li>
+              <li><a href="compare-details.html">Compare Details</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="blog.html">Blog</a>
+            <ul>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="blog-post.html">Blog Post</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">Pages</a>
+            <ul>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="shortcodes.html">Shortcodes</a></li>
+            </ul>
+          </li>
+          <li>
+            <!-- <a href="/users/sign_in">Log in</a> -->
+            <% if user_signed_in? %>
+              <!-- <%= image_tag current_user.profile_img, class: "rounded-circle", width: "80"%>
+              <span><%= current_user.email %></span> -->
+              <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Log in', new_user_session_path %>
+              <!-- <%= link_to '회원가입', new_user_registration_path %> -->
+            <% end %> -->
+          </li>
+        </ul>
+      </nav> <!-- end .main-nav -->
+      <a href="" class="responsive-menu-open"><i class="fa fa-bars"></i></a>
+    </div> <!-- end .navigation -->
+  </div> <!-- end .container -->
+</header> <!-- end .header -->
+
+
   <%= yield %>
+<!-- <a href="/users/sign_in">로그인</a> -->
+<!-- <a href="/users/sign_up">회원가입</a>
+
+
 <!-- <script
 src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/c88f395bdd.js"></script>
   <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script-->
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </body>

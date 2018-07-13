@@ -23,3 +23,5 @@ csv 파일 반영 방법
 다른 branch에서 작업하고 커밋하거나 푸쉬한경우
 다른데서 올릴경우 git pull을 하고 올려야 한다.
 ```
+
+로그인 화면 변경시 app/views/users/sessions/new.html.erb   * user파일이 없으면 devise내 파일이 디폴트

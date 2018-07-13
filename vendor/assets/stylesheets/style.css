@@ -107,8 +107,7 @@ h4 {
 	font-size: 22px;
 	line-height: 28px;
 	font-weight: 400;
-	margin-top: 0;
-	margin-bottom: 18px;
+	margin: 0 auto;
 }
 h5 {
 	font-size: 18px;
@@ -1265,7 +1264,7 @@ label .required {
 }
 .main-nav ul>li a {
 	font-size: 13px;
-	color: #5d6e7b;
+	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 1px;
@@ -1277,11 +1276,11 @@ label .required {
 }
 .main-nav ul>li a:hover, .main-nav ul>li:hover a {
 	text-decoration: none;
-	border-top: 4px solid #09a0f7;
+	border-top: 4px solid #ffffff;
 }
 .main-nav ul>li.active a {
 	font-weight: 400;
-	border-top: 4px solid #09a0f7;
+	border-top: 4px solid #ffffff;
 }
 .main-nav ul>li ul {
 	opacity: 0;
@@ -1868,10 +1867,10 @@ label .required {
 	padding: 0 16px;
 	font-weight: 900;
 	font-size: 30px;
-	background: #0074e1;
+	background-color: rgba(0,0,0,0);
 	color: #fff;
 	text-transform: uppercase;
-	margin-bottom: 14px;
+	margin-bottom: 85px;
 	display: inline-block;
 	max-width: 500px;
 }
