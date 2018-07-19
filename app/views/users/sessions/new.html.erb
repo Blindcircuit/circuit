@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-sm-offset-3 col-sm-6">
 			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <span class="text-center"><img src="<%=asset_path 'name.JPG'%>" alt="Blind Circuit" class="img-responsive" style="height: 80px; margin: auto;"></span>
+      <span class="text-center"><img src="<%=asset_path 'name.jpeg'%>" alt="Blind Circuit" class="img-responsive" style="margin: auto;"></span>
 			<br />
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 			<div class="form-group">
         <div class="form-actions" >
           <div class="text-center">
-						<%= f.button :submit, "로그인", class: 'button border dark large btn-lg btn-block' %>
+						<%= f.button :submit, "로그인", class: 'button border dark small size2 btn-block' %>
 					</div>
         </div> <!--form-action end -->
 			</div> <!--form-group end -->
@@ -44,9 +44,11 @@
 	</div> <!--row end -->
 
 
+
 <%= render "users/shared/links" %>
 	<% end %>
 </div>
+
 			<!-- <div class="row">
 				<div class="col-sm-offset-2 col-sm-8">
 					<div class="form-group">
@@ -59,9 +61,3 @@
 					</div>
 				</div>
 			</div> -->
-
-		<footer class="footer">
-			<div class="bottom">
-				<span class="copyright">Copyright 2018. All Rights Reserved by Blind Circuit.</span>
-			</div> <!-- end .bottom -->
-		</footer> <!-- end .footer -->

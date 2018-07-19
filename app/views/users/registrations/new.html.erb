@@ -1,19 +1,56 @@
-<h2>Sign up</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
+<div class="container">
+  <div class= "text-center">
+  <h1>회원가입</h1>
+  </div>
   <div class="form-inputs">
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4">
+
     <%= f.input :name, required: true %>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
     <%= f.input :nickname, required: true%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
     <%= f.input :email, required: true, autofocus: true %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
     <%= f.input :password, required: true, hint: ("최소#{@minimum_password_length}자리 이상으로 설정해주세요" if @minimum_password_length) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
     <%= f.input :password_confirmation, required: true %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
   </div>
+<div class="row">
+  <div class="col-sm-offset-5 col-sm-2">
+    <div class="form-actions">
+      <%= f.button :submit,class: 'button solid blue size2 btn-block' %>
+    </div>
+  </div>
+</div>
+</div>
+<br />
 <% end %>
-
-<%= render "users/shared/links" %>

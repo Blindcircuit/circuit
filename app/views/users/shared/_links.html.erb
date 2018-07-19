@@ -15,30 +15,42 @@
 
 
 <%- if devise_mapping.omniauthable? %>
-<% a=1 %>
+<%- a=1; %>
   <%- resource_class.omniauth_providers.each do |provider| %>
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
       <div class="text-center">
-        <% if a==1 %>
-          <%= link_to "#{OmniAuth::Utils.camelize(provider).upcase} 로그인 하기", omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary btn-lg btn-block' %><br />
-          <%a=2 %>
-        <%else%>
-          <%= link_to "#{OmniAuth::Utils.camelize(provider).upcase} 로그인 하기", omniauth_authorize_path(resource_name, provider), class: 'btn btn-warning btn-lg btn-block' %><br />
-        <%end%>
+
+        <%- if a==1 %>
+        <%= link_to "#{OmniAuth::Utils.camelize(provider).upcase} 로그인 하기", omniauth_authorize_path(resource_name, provider), class: 'button solid blue size2 btn-block' %><br />
+        <%- a=2 %>
+        <% else %>
+        <%= link_to "#{OmniAuth::Utils.camelize(provider).upcase} 로그인 하기", omniauth_authorize_path(resource_name, provider), class: 'button solid yellow size2 btn-block' %>
+        <br />
+        <br />
+        <% end -%>
+
       </div>
     </div>
   </div>
   <% end -%>
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+      <div class="text-center">
+        <div class="row">
 
-  <div class="text-center">
-    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <%= link_to "회원가입/", new_registration_path(resource_name) %>
-    <% end -%>
+              <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "회원가입", new_registration_path(resource_name)%>
+              <% end -%>
+              /
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "비밀번호 찾기", new_password_path(resource_name) %>
+            <% end -%>
 
-    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "비밀번호 찾기", new_password_path(resource_name) %>
-    <% end -%>
+        </div>
+      </div>
+    </div>
   </div>
+  <br />
   <br />
 <% end -%>
