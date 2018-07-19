@@ -12,13 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require tinymce-jquery
-
 //= require bootstrap.min
 //= require jquery.inview.min
-//= require tweetie.min
 //= require jquery.flexslider-min
+//= require tweetie.min
 //= require owl.carousel.min
 //= require isotope.pkgd.min
 //= require imagesloaded.pkgd.min
