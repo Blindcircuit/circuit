@@ -1868,7 +1868,7 @@ label .required {
 	font-weight: 900;
 	font-size: 30px;
 	background-color: rgba(0,0,0,0);
-	color: #fff;
+	color: #ff0000;
 	text-transform: uppercase;
 	margin-bottom: 85px;
 	display: inline-block;
