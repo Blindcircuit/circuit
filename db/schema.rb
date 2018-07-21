@@ -55,18 +55,18 @@ ActiveRecord::Schema.define(version: 20180720010443) do
   end
 
   create_table "records", force: :cascade do |t|
-    t.string   "user_nickname",                null: false
-    t.integer  "track_id",                     null: false
-    t.integer  "car_id",                       null: false
-    t.string   "bestlap",                      null: false
-    t.string   "track_status",  default: "맑음", null: false
-    t.date     "recorddate",                   null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "user_id",                     null: false
+    t.integer  "track_id",                    null: false
+    t.integer  "car_id",                      null: false
+    t.string   "laptime",                     null: false
+    t.string   "track_status", default: "맑음", null: false
+    t.date     "recorddate",                  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.string   "track"
+    t.string   "trackname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

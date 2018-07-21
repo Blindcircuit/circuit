@@ -1,4 +1,4 @@
 class Track < ActiveRecord::Base
   belongs_to :user
-  belongs_to :record
+  has_many :records
 end

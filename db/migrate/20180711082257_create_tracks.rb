@@ -1,7 +1,7 @@
 class CreateTracks < ActiveRecord::Migration
   def change
     create_table :tracks do |t|
-      t.string :track
+      t.string :trackname
       t.timestamps null: false
     end
   end

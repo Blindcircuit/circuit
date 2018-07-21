@@ -7,17 +7,17 @@
 
 
   <div class="container">
-    <h2>나의 최고기록</h2>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="font-size: 35px; color: #111111; height: 100px">
+    <h2 style="color: #2e3335">나의 최고기록</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="color: #fff; background: #2e3335">
       <!-- Indicators -->
-      <ol class="carousel-indicators" style="height: 100px">
+      <!-- <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
+      </ol> -->
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" style="height: 100px">
+      <div class="carousel-inner">
         <div class="item active">
           <div class="text-center">
             <div class="row">
@@ -87,32 +87,36 @@
   </div>
 
 <br />
-<br />
-<br />
 <div class="container">
-  <h3>이전 기록</h3>
+  <h3 style="color: #000000">이전 기록</h3>
   <table class="table">
     <thead style="background-color: black; color: white">
       <tr>
         <!-- 최신입력순서대로 상단에 배치 -->
-        <th scope="col">#</th>
-        <th scope="col">TRACK</th>
-        <th scope="col">CAR</th>
-        <th scope="col">TIME(1Lap)</th>
-        <th scope="col">주행날짜</th>
-        <th scope="col">노면상태</th>
+        <th scope="col" class="text-center">Index</th>
+        <th scope="col" class="text-center">TRACK</th>
+        <th scope="col" class="text-center">CAR</th>
+        <th scope="col" class="text-center">TIME(1Lap)</th>
+        <th scope="col" class="text-center">주행날짜</th>
+        <!-- 디자인적으로 그림으로 변경 -->
+        <th scope="col" class="text-center">트랙상태</th>
+
       </tr>
     </thead>
     <tbody>
+      <% a=@myrecords.size+1%>
+      <% @myrecords.each do |record| %>
       <tr>
-        <th scope="row">1</th>
-        <td>용인 스피드웨이</td>
-        <td>Stinger 3.3T</td>
-        <td>1:20:33</td>
-        <td>18/03/23</td>
-        <td>DRY</td>
+        <th scope="row" class="text-center"><%=a-=1%></th>
+        <td class="text-center"><%=record.track.trackname%></td>
+        <td class="text-center"><%=record.car.model%></td>
+        <td class="text-center"><%=record.laptime.slice(0)%>"<%=record.laptime.slice(1..2)%>'<%=record.laptime.slice(3..4)%></td>
+        <td class="text-center"><%=record.recorddate%></td>
+        <td class="text-center"><%=record.track_status%></td>
       </tr>
-      <tr>
+      <% end %>
+
+      <!-- <tr>
         <th scope="row">2</th>
         <td>용인 스피드웨이</td>
         <td>Stinger 3.3T</td>
@@ -143,7 +147,7 @@
         <td>1:20:33</td>
         <td>18/03/23</td>
         <td>DRY</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>

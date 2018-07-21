@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
-  has_many :record
+  has_many :records
+  has_many :cars
   before_save :profile_img_default
 
 # default img 넣는 메소드

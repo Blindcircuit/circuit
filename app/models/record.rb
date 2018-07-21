@@ -1,5 +1,6 @@
 class Record < ActiveRecord::Base
-  has_many :user
-  has_many :car
-  has_many :track
+  has_many :users
+  belongs_to :car
+  belongs_to :track
+
 end
