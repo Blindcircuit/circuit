@@ -11,8 +11,29 @@ require 'csv'
 #   Post.create! row.to_hash
 # end
 
+# 트랙정보 삽입
 CSV.foreach(Rails.root.join('db', 'track.csv'), {headers: true, encoding: "UTF-8"}) do |row|
   Track.create! row.to_hash
+end
+# 자동차 정보 삽입
+CSV.foreach(Rails.root.join('db', 'car.csv'), {headers: true, encoding: "UTF-8"}) do |row|
+  Car.create! row.to_hash
+end
+# 기록정보 삽입
+CSV.foreach(Rails.root.join('db', 'record.csv'), {headers: true, encoding: "UTF-8"}) do |row|
+  Record.create! row.to_hash
+end
+
+#유저 정보삽입
+5.times do |i|
+User.create(
+  name: "정선우#{i}",
+  email: "#{i}@#{i}",
+  nickname: "선우#{i}",
+  password: 123123,
+  password_confirmation: 123123,
+  confirmed_at: Time.now() 
+)
 end
 
 

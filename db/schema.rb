@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20180720010443) do
 
   create_table "cars", force: :cascade do |t|
-    t.string   "company"
+    t.string   "brand"
     t.string   "model"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,8 +55,14 @@ ActiveRecord::Schema.define(version: 20180720010443) do
   end
 
   create_table "records", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "user_nickname",                null: false
+    t.integer  "track_id",                     null: false
+    t.integer  "car_id",                       null: false
+    t.string   "bestlap",                      null: false
+    t.string   "track_status",  default: "맑음", null: false
+    t.date     "recorddate",                   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "tracks", force: :cascade do |t|
