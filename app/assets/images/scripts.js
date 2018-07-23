@@ -28,31 +28,31 @@
 		});
 
 		/*==========  Twitter  ==========*/
-		$('#tweets').twittie({
-			username: 'EnvatoMarket',
-			template: '{{tweet}}<span class="date">{{date}}</span>',
-			dateFormat: '%b. %d, %Y',
-			apiPath: './scripts/Tweetie/api/tweet.php'
-		}, function() {
-			$('#tweets ul').addClass('slides');
-			$('#tweets').flexslider({
-				controlNav: false,
-				directionNav: false,
-				smoothHeight: true,
-				start: function() {
-					twitterHeight()
-				},
-				after: function() {
-					twitterHeight()
-				}
-			});
-			return false;
-		});
-		function twitterHeight() {
-			var height = $('.twitter').outerHeight();
-			$('.footer .twitter .icon span').css('border-top-width',height);
-			return false;
-		}
+		// $('#tweets').twittie({
+		// 	username: 'EnvatoMarket',
+		// 	template: '{{tweet}}<span class="date">{{date}}</span>',
+		// 	dateFormat: '%b. %d, %Y',
+		// 	apiPath: './scripts/Tweetie/api/tweet.php'
+		// }, function() {
+		// 	$('#tweets ul').addClass('slides');
+		// 	$('#tweets').flexslider({
+		// 		controlNav: false,
+		// 		directionNav: false,
+		// 		smoothHeight: true,
+		// 		start: function() {
+		// 			twitterHeight()
+		// 		},
+		// 		after: function() {
+		// 			twitterHeight()
+		// 		}
+		// 	});
+		// 	return false;
+		// });
+		// function twitterHeight() {
+		// 	var height = $('.twitter').outerHeight();
+		// 	$('.footer .twitter .icon span').css('border-top-width',height);
+		// 	return false;
+		// }
 
 		/*==========  Range Sliders  ==========*/
 		$('#price-slider').noUiSlider({
@@ -192,7 +192,7 @@
 		});
 
 	});
-	
+
 	/*==========  File Inputs  ==========*/
 	$(document).on('change', '.file-input :file', function() {
 		var input = $(this),
@@ -206,7 +206,7 @@
 		$(this).parent().next('.file-input-selection').html(log);
 		return false;
 	});
-	
+
 	/*==========  Validate Email  ==========*/
 	function validateEmail($validate_email) {
 		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -217,7 +217,7 @@
 		}
 		return false;
 	}
-	
+
 	/*==========  Contact Form  ==========*/
 	$('#contact-form').on('submit', function() {
 		$('#contact-error').fadeOut();
@@ -316,32 +316,32 @@
 	});
 
 	/*==========  Map  ==========*/
-	var map;
-	function initialize_full_width_map() {
-		if ($('.map').length) {
-			var myLatLng = new google.maps.LatLng(-37.814199, 144.961560);
-			var mapOptions = {
-				zoom: 15,
-				center: myLatLng,
-				scrollwheel: false,
-				panControl: false,
-				zoomControl: true,
-				scaleControl: false,
-				mapTypeControl: false,
-				streetViewControl: false
-			};
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-			var marker = new google.maps.Marker({
-				position: myLatLng,
-				map: map,
-				title: 'Envato',
-				icon: './images/marker.png'
-			});
-		} else {
-			return false;
-		}
-		return false;
-	}
-	google.maps.event.addDomListener(window, 'load', initialize_full_width_map);
+	// var map;
+	// function initialize_full_width_map() {
+	// 	if ($('.map').length) {
+	// 		var myLatLng = new google.maps.LatLng(-37.814199, 144.961560);
+	// 		var mapOptions = {
+	// 			zoom: 15,
+	// 			center: myLatLng,
+	// 			scrollwheel: false,
+	// 			panControl: false,
+	// 			zoomControl: true,
+	// 			scaleControl: false,
+	// 			mapTypeControl: false,
+	// 			streetViewControl: false
+	// 		};
+	// 		map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	// 		var marker = new google.maps.Marker({
+	// 			position: myLatLng,
+	// 			map: map,
+	// 			title: 'Envato',
+	// 			icon: './images/marker.png'
+	// 		});
+	// 	} else {
+	// 		return false;
+	// 	}
+	// 	return false;
+	// }
+	// google.maps.event.addDomListener(window, 'load', initialize_full_width_map);
 
 })(jQuery);

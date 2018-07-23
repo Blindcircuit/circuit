@@ -18,45 +18,53 @@
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-        <div class="item active">
-          <div class="text-center">
-            <div class="row">
-              <div class="col-md-3">
-                  <span>용인 스피드웨이</span>
-              </div>
-              <div class="col-md-3">
-                  <span>1:20:11</span>
-              </div>
-              <div class="col-md-3">
-                  <span>Veloster N</span>
-              </div>
-              <div class="col-md-3">
-                <span>18/06/20</span>
-              </div>
+        <% index=1 %>
+      <% @bestrecord.each do |bestrecord| %>
+        <% if index==1 %>
+          <% index=2 %>
+      <!-- 첫 번쨰 슬라이드 -->
+      <div class="item active">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-md-3">
+                <span><%=bestrecord.track.trackname%></span>
+            </div>
+            <div class="col-md-3">
+                <span><%=bestrecord.laptime.to_s.slice(0)%>"&nbsp<%=bestrecord.laptime.to_s.slice(1..2)%>'&nbsp<%=bestrecord.laptime.to_s.slice(3..4)%></span>
+            </div>
+            <div class="col-md-3">
+                <span><%=bestrecord.car.model%></span>
+            </div>
+            <div class="col-md-3">
+              <span><%=bestrecord.recorddate%></span>
             </div>
           </div>
         </div>
-
-        <div class="item">
-          <div class="text-center">
-            <div class="row">
-              <div class="col-md-3">
-                  <span>인제 스피디움</span>
-              </div>
-              <div class="col-md-3">
-                  <span>1:33:30</span>
-              </div>
-              <div class="col-md-3">
-                  <span>String 3.3T</span>
-              </div>
-              <div class="col-md-3">
-                <span>18/06/21</span>
-              </div>
+      </div>
+        <% else %>
+      <!-- 나머지 슬라이드 태그 -->
+      <div class="item">
+        <div class="text-center">
+          <div class="row">
+            <div class="col-md-3">
+                <span><%=bestrecord.track.trackname%></span>
+            </div>
+            <div class="col-md-3">
+                <span><%=bestrecord.laptime.to_s.slice(0)%>"&nbsp<%=bestrecord.laptime.to_s.slice(1..2)%>'&nbsp<%=bestrecord.laptime.to_s.slice(3..4)%></span>
+            </div>
+            <div class="col-md-3">
+                <span><%=bestrecord.car.model%></span>
+            </div>
+            <div class="col-md-3">
+              <span><%=bestrecord.recorddate%></span>
             </div>
           </div>
         </div>
-
-        <div class="item">
+      </div>
+        <% end %>
+      <% end %> <!-- 반복문 끝 -->
+    </div>
+        <!-- <div class="item">
           <div class="text-center">
             <div class="row">
               <div class="col-md-3">
@@ -73,8 +81,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
+
 
       <!-- Left and right controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -110,7 +118,7 @@
         <th scope="row" class="text-center"><%=a-=1%></th>
         <td class="text-center"><%=record.track.trackname%></td>
         <td class="text-center"><%=record.car.model%></td>
-        <td class="text-center"><%=record.laptime.slice(0)%>"<%=record.laptime.slice(1..2)%>'<%=record.laptime.slice(3..4)%></td>
+        <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
         <td class="text-center"><%=record.recorddate%></td>
         <td class="text-center"><%=record.track_status%></td>
       </tr>

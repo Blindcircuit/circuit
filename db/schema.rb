@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20180720010443) do
     t.integer  "user_id",                     null: false
     t.integer  "track_id",                    null: false
     t.integer  "car_id",                      null: false
-    t.string   "laptime",                     null: false
+    t.integer  "laptime",                     null: false
     t.string   "track_status", default: "맑음", null: false
     t.date     "recorddate",                  null: false
     t.datetime "created_at",                  null: false
