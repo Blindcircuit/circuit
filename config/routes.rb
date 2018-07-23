@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     match 'users/info' => 'users/registrations#info', via: [:get, :patch]
   end
-
+  post 'circuit/menu'
   # root 'posts#index'
   resources :posts
   post '/tinymce_assets' => 'tinymce_assets#create'
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'mypage/show'
   get 'user/mypage'
   get 'circuit/record'
+  get 'mypage/insert'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

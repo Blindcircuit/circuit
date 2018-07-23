@@ -1,0 +1,39 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+<h3>기록 입력</h3>
+<br />
+  <form>
+  <span id="helpBlock" class="help-block">서킷 선택</span>
+  <select class="form-control">
+  <option>용인 스피드웨이</option>
+  <option>영암 KIC</option>
+  <option>인제 스피디움</option>
+  </select>
+  <span id="helpBlock" class="help-block">차량 선택</span>
+  <select class="form-control">
+    <% @models.each do |model| %>
+    <option><%=model.brand%>&nbsp&nbsp&nbsp<%=model.model%></option>
+    <% end %>
+  </select>
+  <span id="helpBlock" class="help-block">랩타임(1lap)</span>
+  <div>
+    <input type="number" class="form-control">"&nbsp&nbsp<input type="number" class="form-control">'&nbsp&nbsp<input type="number" class="form-control">
+  </div>
+  <span id="helpBlock" class="help-block">주행날짜</span>
+  <input type="date" class="form-control">
+  <span id="helpBlock" class="help-block">트랙 상태</span>
+  <select class="form-control">
+  <option>맑음</option>
+  <option>눈</option>
+  <option>비</option>
+  </select>
+  <br />
+  <button type="submit" class="btn btn-primary">기록 저장</button>
+  </form>
+</div>
+<br />

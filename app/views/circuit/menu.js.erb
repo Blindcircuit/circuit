@@ -1,0 +1,6 @@
+$('select.selectpicker').append(`
+  <% @models.each do |model| %>
+  <option><%=model.model%></option>
+  <% end %>
+  `
+)
