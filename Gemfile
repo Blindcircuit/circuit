@@ -11,7 +11,7 @@ gem 'devise'
 gem 'cancancan', '~> 2.0'
 gem 'omniauth-facebook'
 # 게시판
-gem 'kaminari'
+gem 'kaminari' # 페이지 네이션
 gem 'simple_form'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'

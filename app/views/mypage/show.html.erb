@@ -98,7 +98,7 @@
 <div class="container">
   <h3 style="color: #000000">이전 기록</h3>
   <table class="table">
-    <thead style="background-color: black; color: white">
+    <thead style="background-color: #2e3335; color: white">
       <tr>
         <!-- 최신입력순서대로 상단에 배치 -->
         <th scope="col" class="text-center">Index</th>
@@ -123,41 +123,12 @@
         <td class="text-center"><%=record.track_status%></td>
       </tr>
       <% end %>
-
-      <!-- <tr>
-        <th scope="row">2</th>
-        <td>용인 스피드웨이</td>
-        <td>Stinger 3.3T</td>
-        <td>1:20:33</td>
-        <td>18/03/23</td>
-        <td>DRY</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>용인 스피드웨이</td>
-        <td>Stinger 3.3T</td>
-        <td>1:20:33</td>
-        <td>18/03/23</td>
-        <td>DRY</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>용인 스피드웨이</td>
-        <td>Stinger 3.3T</td>
-        <td>1:20:33</td>
-        <td>18/03/23</td>
-        <td>DRY</td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>용인 스피드웨이</td>
-        <td>Stinger 3.3T</td>
-        <td>1:20:33</td>
-        <td>18/03/23</td>
-        <td>DRY</td>
-      </tr> -->
     </tbody>
   </table>
+  <div class="text-center">
+  <%= paginate @myrecords %>
+  </div>
+  <br />
 </div>
 
 <!-- 하단 페이징 -->

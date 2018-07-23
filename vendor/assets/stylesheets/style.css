@@ -289,8 +289,8 @@ blockquote footer {
 	border-radius: 0;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover {
-	border-color: #0074e1;
-	background: #0074e1;
+	border-color: #2e3335;
+	background: #2e3335;
 	color: #fff;
 	opacity: 1;
 }
