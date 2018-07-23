@@ -5,9 +5,81 @@
 <br />
 <br />
 
-<br />
 <div class="container">
   <h3 class="small-heading no-margin-top">서킷별 기록 순위</h3>
+  <section class="section dark tiny">
+    <div class="inner">
+      <div class="container">
+        <div class="tabpanel border section-tab" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#search-cars" aria-controls="search-cars" role="tab" data-toggle="tab">기록 검색</a></li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="search-cars">
+              <form action="" method="post" class="banner-form">
+                <div class="item">
+                  <div class="select-wrapper">
+                    <select class="selectpicker">
+                      <option>서킷 종류</option>
+                      <% @tracks.each do |track| %>
+                      <option><%=track.trackname%></option>                  
+                      <% end %>
+                    </select>
+
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="select-wrapper">
+                    <select class="selectpicker">
+                      <option>Brand</option>
+                      <option>Model 1</option>
+                      <option>Model 2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="select-wrapper">
+                    <select class="selectpicker">
+                      <option>Model</option>
+                      <option>Model 1</option>
+                      <option>Model 2</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <span class="price-slider-value">Laptime <span id="price-min">123</span> - <span id="price-max"></span></span>
+                  <div id="price-slider"></div>
+                </div>
+                <div class="item">
+                  <button type="submit" class="button solid light-blue">Search</button>
+                </div>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="sell-car">
+              <form action="" method="post" class="banner-form">
+                <div class="item">
+                  <input type="text" placeholder="Brand">
+                </div>
+                <div class="item">
+                  <input type="text" placeholder="Model">
+                </div>
+                <div class="item">
+                  <input type="text" placeholder="Year">
+                </div>
+                <div class="item">
+                  <input type="text" placeholder="Price">
+                </div>
+                <div class="item">
+                  <button type="submit" class="button solid light-blue">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="tabpanel solid" role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#heading-tab1" aria-controls="heading-tab1" role="tab" data-toggle="tab">용인 스피드웨이</a></li>
@@ -132,89 +204,4 @@
       </div> <!-- end .tab-panel -->
     </div> <!-- end .tab-content -->
   </div> <!-- end .tabpanel -->
-</div>  
-
-
-
-
-
-
-
-
-
-
-
-<section class="section dark tiny">
-  <div class="inner">
-    <div class="container">
-      <div class="tabpanel border section-tab" role="tabpanel">
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#search-cars" aria-controls="search-cars" role="tab" data-toggle="tab">Search Record</a></li>
-        </ul>
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade in active" id="search-cars">
-            <form action="" method="post" class="banner-form">
-              <div class="item">
-                <div class="select-wrapper">
-                  <select class="selectpicker">
-                    <option>서킷 종류</option>
-                    <option>용인 스피드웨이</option>
-                    <option>인제 스피디움</option>
-                    <option>영암 KIC</option>
-                  </select>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="select-wrapper">
-                  <select class="selectpicker">
-                    <option>Select Model</option>
-                    <option>Model 1</option>
-                    <option>Model 2</option>
-                  </select>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="select-wrapper">
-                  <select class="selectpicker">
-                    <option>Year of Model</option>
-                    <option>Year 1</option>
-                    <option>Year 2</option>
-                  </select>
-
-                </div>
-              </div>
-              <div class="item">
-                <span class="price-slider-value">Price (Lt) <span id="price-min"></span> - <span id="price-max"></span></span>
-                <div id="price-slider"></div>
-              </div>
-              <div class="item">
-                <button type="submit" class="button solid light-blue">Search</button>
-              </div>
-            </form>
-          </div>
-          <div role="tabpanel" class="tab-pane fade" id="sell-car">
-            <form action="" method="post" class="banner-form">
-              <div class="item">
-                <input type="text" placeholder="Brand">
-              </div>
-              <div class="item">
-                <input type="text" placeholder="Model">
-              </div>
-              <div class="item">
-                <input type="text" placeholder="Year">
-              </div>
-              <div class="item">
-                <input type="text" placeholder="Price">
-              </div>
-              <div class="item">
-                <button type="submit" class="button solid light-blue">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
