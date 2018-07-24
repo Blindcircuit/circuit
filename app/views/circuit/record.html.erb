@@ -69,10 +69,14 @@
               </tr>
             </thead>
             <tbody>
-              <% a=0%>
-              <% @yongin.each do |record| %>
+
+              <% @yongin.each_with_index do |record,index| %>
               <tr>
-                <th scope="row" class="text-center"><%=a+=1%></th>
+                <% if params[:page] %>
+                  <th scope="row" class="text-center"><%=index+1+(params[:page].to_i-1)*10%></th>
+                <% else %>
+                  <th scope="row" class="text-center"><%=index+1%></th>
+                <% end %>
                 <td class="text-center"><%=record.user.nickname%></td>
                 <td class="text-center"><%=record.car.brand%>&nbsp&nbsp&nbsp<%=record.car.model%></td>
                 <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
@@ -106,10 +110,13 @@
               </tr>
             </thead>
             <tbody>
-              <% a=0%>
-              <% @yeongam.each do |record| %>
+              <% @yeongam.each_with_index do |record,index| %>
               <tr>
-                <th scope="row" class="text-center"><%=a+=1%></th>
+                <% if params[:page] %>
+                  <th scope="row" class="text-center"><%=index+1+(params[:page].to_i-1)*10%></th>
+                <% else %>
+                  <th scope="row" class="text-center"><%=index+1%></th>
+                <% end %>
                 <td class="text-center"><%=record.user.nickname%></td>
                 <td class="text-center"><%=record.car.brand%>&nbsp&nbsp&nbsp<%=record.car.model%></td>
                 <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
@@ -136,16 +143,17 @@
                 <th scope="col" class="text-center">CAR</th>
                 <th scope="col" class="text-center">TIME(1Lap)</th>
                 <th scope="col" class="text-center">주행날짜</th>
-                <!-- 디자인적으로 그림으로 변경 -->
                 <th scope="col" class="text-center">트랙상태</th>
-
               </tr>
             </thead>
             <tbody>
-              <% a=0%>
-              <% @inje.each do |record| %>
+              <% @inje.each_with_index do |record,index| %>
               <tr>
-                <th scope="row" class="text-center"><%=a+=1%></th>
+                <% if params[:page] %>
+                  <th scope="row" class="text-center"><%=index+1+(params[:page].to_i-1)*10%></th>
+                <% else %>
+                  <th scope="row" class="text-center"><%=index+1%></th>
+                <% end %>
                 <td class="text-center"><%=record.user.nickname%></td>
                 <td class="text-center"><%=record.car.brand%>&nbsp&nbsp&nbsp<%=record.car.model%></td>
                 <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
