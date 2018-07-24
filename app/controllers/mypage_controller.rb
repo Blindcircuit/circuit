@@ -1,5 +1,6 @@
 class MypageController < ApplicationController
-
+  before_action :mypage_params, only: :create
+  before_action :authenticate_user!
   def show
     #값이 여러개 뽑을 려면 where, 단수find
     # 데이터 외래키 관계를 가지면 user.records 로 데이터를 가져올 수 있음
@@ -17,11 +18,13 @@ class MypageController < ApplicationController
   end
 
   def new
-    @record = Post.new
+    @record = current_user.records.new
   end
 
   def create
-    @record = Record.new(mypage_params)
+    @record = current_user.records.new(mypage_params)
+    @record.laptime = (params[:minute ] + params[:seconds] + params[:mseconds]).to_i
+
     respond_to do |format|
       if @record.save
         # 저장이 되었을 경우에 실행
@@ -40,7 +43,7 @@ class MypageController < ApplicationController
 
   private
   def mypage_params
-    params.require(:post).permit(:trackname, :model, :laptime, :track_status, :recorddate)
+    params.permit(:track_id, :car_id, :track_status, :recorddate)
   end
 
 end

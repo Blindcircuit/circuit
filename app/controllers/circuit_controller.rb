@@ -19,7 +19,7 @@ class CircuitController < ApplicationController
       @inje = Kaminari.paginate_array(@inje).page(params[:page]).per(10)
     end
     @tracks=Track.all
-    @brands=Car.select(:brand).distinct
+    @brands=Car.all
 
     if params[:brand] !=nil
     @models=Car.select(brand: params[:brand])

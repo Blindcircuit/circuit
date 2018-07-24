@@ -11,12 +11,10 @@
     <div class="inner">
       <div class="container">
         <div class="tabpanel border section-tab" role="tabpanel">
-          <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#search-cars" aria-controls="search-cars" role="tab" data-toggle="tab">기록 검색</a></li>
-          </ul>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="search-cars">
               <form action="/record" method="post" class="banner-form">
+                <div class="text-center">
                 <div class="item">
                   <div class="select-wrapper">
                     <select class="selectpicker" name="track">
@@ -31,27 +29,16 @@
                 <div class="item">
                   <div class="select-wrapper">
                     <select id="brand" class="selectpicker" name="brand">
-                      <option>제조사</option>
+                      <option>차량</option>
                       <% @brands.each do |brand| %>
-                      <option value="<%=brand.brand%>"><%=brand.brand%></option>
-                      <% end %>
-                    </select>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="select-wrapper">
-                    <select class="selectpicker" name="model">
-                      <option>모델</option>
-                      <% if params[:brand] != nil %>
-                        <% @models.each do |model| %>
-                        <option><%=model.model%></option>
-                        <% end %>
+                      <option value="<%=brand.brand%>"><%=brand.brand%>&nbsp&nbsp&nbsp<%=brand.model%></option>
                       <% end %>
                     </select>
                   </div>
                 </div>
                 <div class="item">
                   <button type="submit" class="button solid light-blue">검색</button>
+                </div>
                 </div>
               </form>
             </div>
