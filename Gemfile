@@ -17,6 +17,9 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
+group :development do
+  gem "rails-erd"
+end
 
 gem 'omniauth-kakao', :git => 'https://github.com/hcn1519/omniauth-kakao'
 # gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
