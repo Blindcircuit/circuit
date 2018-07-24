@@ -98,6 +98,7 @@
 <div class="container">
   <h3 style="color: #000000">이전 기록</h3>
   <table class="table">
+    <% a=@myrecords.size+1%>
     <thead style="background-color: #2e3335; color: white">
       <tr>
         <!-- 최신입력순서대로 상단에 배치 -->
@@ -112,7 +113,6 @@
       </tr>
     </thead>
     <tbody>
-      <% a=@myrecords.size+1%>
       <% @myrecords.each do |record| %>
       <tr>
         <th scope="row" class="text-center"><%=a-=1%></th>
