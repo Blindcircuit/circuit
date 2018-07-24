@@ -8,56 +8,34 @@
 <div class="container">
   <h3 class="small-heading no-margin-top">서킷별 기록 순위</h3>
   <section class="section dark tiny">
-    <div class="inner">
+    <div class="inner" style="padding-bottom: 15px">
       <div class="container">
         <div class="tabpanel border section-tab" role="tabpanel">
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="search-cars">
-              <form action="/record" method="post" class="banner-form">
-                <div class="text-center">
+              <form action="/circuit/record" method="get" class="banner-form" id="query">
                 <div class="item">
                   <div class="select-wrapper">
-                    <select class="selectpicker" name="track">
+                    <select class="selectpicker" name="track_id" form="query">
                       <option>서킷 종류</option>
                       <% @tracks.each do |track| %>
-                      <option><%=track.trackname%></option>
+                      <option value="<%=track.id%>"><%=track.trackname%></option>
                       <% end %>
                     </select>
-
                   </div>
                 </div>
-                <div class="item">
-                  <div class="select-wrapper">
-                    <select id="brand" class="selectpicker" name="brand">
+                <div class="item"  style="width: 350px">
+                  <div class="select-wrapper" style="width: 300px">
+                    <select id="brand" class="selectpicker" name="car_id" form="query">
                       <option>차량</option>
                       <% @brands.each do |brand| %>
-                      <option value="<%=brand.brand%>"><%=brand.brand%>&nbsp&nbsp&nbsp<%=brand.model%></option>
+                      <option value="<%=brand.id%>"><%=brand.brand%>&nbsp&nbsp&nbsp<%=brand.model%></option>
                       <% end %>
                     </select>
                   </div>
                 </div>
                 <div class="item">
                   <button type="submit" class="button solid light-blue">검색</button>
-                </div>
-                </div>
-              </form>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="sell-car">
-              <form action="" method="post" class="banner-form">
-                <div class="item">
-                  <input type="text" placeholder="Brand">
-                </div>
-                <div class="item">
-                  <input type="text" placeholder="Model">
-                </div>
-                <div class="item">
-                  <input type="text" placeholder="Year">
-                </div>
-                <div class="item">
-                  <input type="text" placeholder="Price">
-                </div>
-                <div class="item">
-                  <button type="submit" class="button solid light-blue">Submit</button>
                 </div>
               </form>
             </div>
@@ -66,13 +44,14 @@
       </div>
     </div>
   </section>
+
   <div class="tabpanel solid" role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#heading-tab1" aria-controls="heading-tab1" role="tab" data-toggle="tab">용인 스피드웨이</a></li>
-      <li role="presentation"><a href="#heading-tab2" aria-controls="heading-tab2" role="tab" data-toggle="tab">영암 KIC</a></li>
-      <li role="presentation"><a href="#heading-tab3" aria-controls="heading-tab3" role="tab" data-toggle="tab">인제 스피디움</a></li>
+      <li id="1" role="presentation" class="active"><a href="#heading-tab1" aria-controls="heading-tab1" role="tab" data-toggle="tab">용인 스피드웨이</a></li>
+      <li id="2" role="presentation"><a href="#heading-tab2" aria-controls="heading-tab2" role="tab" data-toggle="tab">영암 KIC</a></li>
+      <li id="3"role="presentation" ><a href="#heading-tab3" aria-controls="heading-tab3" role="tab" data-toggle="tab">인제 스피디움</a></li>
     </ul> <!-- end .nav-tabs -->
-    <div class="tab-content">
+    <div id="result" class="tab-content">
       <div role="tabpanel" class="tab-pane fade in active" id="heading-tab1">
         <div class="container">
           <table class="table">
@@ -196,23 +175,28 @@
 //   this.value()
 // })
 $( document ).ready(function() {
-  $('#brand').next().change(function() {
-      // e.preventDefault();
-      console.log('start!');
-      $.ajax({
-        url: '/circuit/menu',
-        type: "POST",
-        data: {content: this.text(),
-              authenticity_token: $('[name="csrf-token"]').attr('content')},
-        dataType: 'script',
-        success: function(){
-          alert('success')
-          // $('input[name="content"]').val('');
-        },
-        error: function(){
-          alert('fail!');
-        }
-      });
-    });
-  });
+  $("#<%= params[:track_id] %>").children().click();
+});
+//
+// $('button[type="submit"]').on('click', function(e) {
+//       // e.preventDefault();
+//       e.preventDefault();
+//       console.log('start!');
+//       $.ajax({
+//         url: '/circuit/record',
+//         type: "POST",
+//         data: {track_id: $('select[name="track_id"]').val(),
+//               car_id: $('select[name="car_id"]').val(),
+//               authenticity_token: $('[name="csrf-token"]').attr('content')},
+//         dataType: 'script',
+//         success: function(){
+//           alert('success')
+//           // $('input[name="content"]').val('');
+//         },
+//         error: function(){
+//           alert('fail!');
+//         }
+//       });
+//     });
+//   });
 </script>

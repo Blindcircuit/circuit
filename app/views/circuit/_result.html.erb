@@ -1,0 +1,115 @@
+<div role="tabpanel" class="tab-pane fade in active" id="heading-tab1">
+  <div class="container">
+    <table class="table">
+      <thead style="background-color: #2e3335; color: white">
+        <tr>
+          <!-- 최신입력순서대로 상단에 배치 -->
+          <th scope="col" class="text-center">순위</th>
+          <th scope="col" class="text-center">Driver</th>
+          <th scope="col" class="text-center">Brand</th>
+          <th scope="col" class="text-center">CAR</th>
+          <th scope="col" class="text-center">TIME(1Lap)</th>
+          <th scope="col" class="text-center">주행날짜</th>
+          <!-- 디자인적으로 그림으로 변경 -->
+          <th scope="col" class="text-center">트랙상태</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% a=0%>
+        <% yongin.each do |record| %>
+        <tr>
+          <th scope="row" class="text-center"><%=a+=1%></th>
+          <td class="text-center"><%=record.user.nickname%></td>
+          <td class="text-center"><%=record.car.brand%></td>
+          <td class="text-center"><%=record.car.model%></td>
+          <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
+          <td class="text-center"><%=record.recorddate%></td>
+          <td class="text-center"><%=record.track_status%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+    <%= paginate yongin %>
+    </div>
+    <br />
+  </div>
+  <!-- 기록들 -->
+</div> <!-- end .tab-panel -->
+<div role="tabpanel" class="tab-pane fade" id="heading-tab2">
+  <div class="container">
+    <table class="table">
+      <thead style="background-color: #2e3335; color: white">
+        <tr>
+          <!-- 최신입력순서대로 상단에 배치 -->
+          <th scope="col" class="text-center">순위</th>
+          <th scope="col" class="text-center">Driver</th>
+          <th scope="col" class="text-center">Brand</th>
+          <th scope="col" class="text-center">CAR</th>
+          <th scope="col" class="text-center">TIME(1Lap)</th>
+          <th scope="col" class="text-center">주행날짜</th>
+          <!-- 디자인적으로 그림으로 변경 -->
+          <th scope="col" class="text-center">트랙상태</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% a=0%>
+        <% yeongam.each do |record| %>
+        <tr>
+          <th scope="row" class="text-center"><%=a+=1%></th>
+          <td class="text-center"><%=record.user.nickname%></td>
+          <td class="text-center"><%=record.car.brand%></td>
+          <td class="text-center"><%=record.car.model%></td>
+          <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
+          <td class="text-center"><%=record.recorddate%></td>
+          <td class="text-center"><%=record.track_status%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+    <%= paginate yeongam %>
+    </div>
+    <br />
+  </div>
+</div> <!-- end .tab-panel -->
+<div role="tabpanel" class="tab-pane fade" id="heading-tab3">
+  <div class="container">
+    <table class="table">
+      <thead style="background-color: #2e3335; color: white">
+        <tr>
+          <!-- 최신입력순서대로 상단에 배치 -->
+          <th scope="col" class="text-center">순위</th>
+          <th scope="col" class="text-center">Driver</th>
+          <th scope="col" class="text-center">Brand</th>
+          <th scope="col" class="text-center">CAR</th>
+          <th scope="col" class="text-center">TIME(1Lap)</th>
+          <th scope="col" class="text-center">주행날짜</th>
+          <!-- 디자인적으로 그림으로 변경 -->
+          <th scope="col" class="text-center">트랙상태</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% a=0%>
+        <% inje.each do |record| %>
+        <tr>
+          <th scope="row" class="text-center"><%=a+=1%></th>
+          <td class="text-center"><%=record.user.nickname%></td>
+          <td class="text-center"><%=record.car.brand%></td>
+          <td class="text-center"><%=record.car.model%></td>
+          <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
+          <td class="text-center"><%=record.recorddate%></td>
+          <td class="text-center"><%=record.track_status%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+    <%= paginate inje %>
+    </div>
+    <br />
+  </div>
+</div> <!-- end .tab-panel -->

@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   get 'mypage/show'
   get 'user/mypage'
   get 'circuit/record'
+  post 'circuit/record'
   get 'mypage/insert'
   post '/mypage' => 'mypage#create'
+  get '/circuit/:track_id/:car_id' => 'circuit#record'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
