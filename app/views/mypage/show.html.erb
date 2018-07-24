@@ -98,7 +98,7 @@
 <div class="container">
   <h3 style="color: #000000">이전 기록</h3>
   <table class="table">
-    <% a=@myrecords.size+1%>
+
     <thead style="background-color: #2e3335; color: white">
       <tr>
         <!-- 최신입력순서대로 상단에 배치 -->
@@ -113,9 +113,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @myrecords.each do |record| %>
+      <% @myrecords.each_with_index do |record,index| %>
       <tr>
-        <th scope="row" class="text-center"><%=a-=1%></th>
+        <% if params[:page] %>
+          <th scope="row" class="text-center"><%=@index - index-1 -(params[:page].to_i-1)*10%></th>
+        <% else %>
+          <th scope="row" class="text-center"><%=@index - index-1 %></th>
+        <% end %>
         <td class="text-center"><%=record.track.trackname%></td>
         <td class="text-center"><%=record.car.model%></td>
         <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>

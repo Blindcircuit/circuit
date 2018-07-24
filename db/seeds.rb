@@ -24,21 +24,22 @@ CSV.foreach(Rails.root.join('db', 'record.csv'), {headers: true, encoding: "UTF-
   Record.create! row.to_hash
 end
 
+require 'faker'
 #유저 정보삽입
-5.times do |i|
+40.times do |i|
 User.create(
-  name: "정선우#{i}",
+  name: Faker::Name.male_first_name,
   email: "#{i}@#{i}",
-  nickname: "선우#{i}",
+  nickname: Faker::Name.male_first_name,
   password: 123123,
   password_confirmation: 123123,
-  confirmed_at: Time.now() 
+  confirmed_at: Time.now()
 )
 end
 
 
 
-# require 'faker'
+
 #
 # 5.times do |i|
 #   User.create(

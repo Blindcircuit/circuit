@@ -60,7 +60,6 @@
                 <!-- 최신입력순서대로 상단에 배치 -->
                 <th scope="col" class="text-center">순위</th>
                 <th scope="col" class="text-center">Driver</th>
-                <th scope="col" class="text-center">Brand</th>
                 <th scope="col" class="text-center">CAR</th>
                 <th scope="col" class="text-center">TIME(1Lap)</th>
                 <th scope="col" class="text-center">주행날짜</th>
@@ -75,8 +74,7 @@
               <tr>
                 <th scope="row" class="text-center"><%=a+=1%></th>
                 <td class="text-center"><%=record.user.nickname%></td>
-                <td class="text-center"><%=record.car.brand%></td>
-                <td class="text-center"><%=record.car.model%></td>
+                <td class="text-center"><%=record.car.brand%>&nbsp&nbsp&nbsp<%=record.car.model%></td>
                 <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
                 <td class="text-center"><%=record.recorddate%></td>
                 <td class="text-center"><%=record.track_status%></td>
@@ -99,7 +97,6 @@
                 <!-- 최신입력순서대로 상단에 배치 -->
                 <th scope="col" class="text-center">순위</th>
                 <th scope="col" class="text-center">Driver</th>
-                <th scope="col" class="text-center">Brand</th>
                 <th scope="col" class="text-center">CAR</th>
                 <th scope="col" class="text-center">TIME(1Lap)</th>
                 <th scope="col" class="text-center">주행날짜</th>
@@ -114,8 +111,7 @@
               <tr>
                 <th scope="row" class="text-center"><%=a+=1%></th>
                 <td class="text-center"><%=record.user.nickname%></td>
-                <td class="text-center"><%=record.car.brand%></td>
-                <td class="text-center"><%=record.car.model%></td>
+                <td class="text-center"><%=record.car.brand%>&nbsp&nbsp&nbsp<%=record.car.model%></td>
                 <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
                 <td class="text-center"><%=record.recorddate%></td>
                 <td class="text-center"><%=record.track_status%></td>
@@ -137,7 +133,6 @@
                 <!-- 최신입력순서대로 상단에 배치 -->
                 <th scope="col" class="text-center">순위</th>
                 <th scope="col" class="text-center">Driver</th>
-                <th scope="col" class="text-center">Brand</th>
                 <th scope="col" class="text-center">CAR</th>
                 <th scope="col" class="text-center">TIME(1Lap)</th>
                 <th scope="col" class="text-center">주행날짜</th>
@@ -152,8 +147,7 @@
               <tr>
                 <th scope="row" class="text-center"><%=a+=1%></th>
                 <td class="text-center"><%=record.user.nickname%></td>
-                <td class="text-center"><%=record.car.brand%></td>
-                <td class="text-center"><%=record.car.model%></td>
+                <td class="text-center"><%=record.car.brand%>&nbsp&nbsp&nbsp<%=record.car.model%></td>
                 <td class="text-center"><%=record.laptime.to_s.slice(0)%>"&nbsp<%=record.laptime.to_s.slice(1..2)%>'&nbsp<%=record.laptime.to_s.slice(3..4)%></td>
                 <td class="text-center"><%=record.recorddate%></td>
                 <td class="text-center"><%=record.track_status%></td>

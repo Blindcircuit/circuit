@@ -9,7 +9,7 @@ class MypageController < ApplicationController
     @bestrecord=[Record.where(user_id: current_user.id, track_id: 1).order(:laptime).first,
                  Record.where(user_id: current_user.id).where(track_id: 2).order(:laptime).first,
                  Record.where(user_id: current_user.id).where(track_id: 3).order(:laptime).first]
-
+    @index=Record.where(user_id: current_user.id).size+1
   end
 
   def insert
