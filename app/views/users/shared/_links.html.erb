@@ -13,8 +13,8 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
 
-
-<%- if devise_mapping.omniauthable? %>
+<!-- SNS 계정 로그인 코드 -->
+<!-- <%- if devise_mapping.omniauthable? %>
 <%- a=1; %>
   <%- resource_class.omniauth_providers.each do |provider| %>
   <div class="row">
@@ -34,6 +34,7 @@
     </div>
   </div>
   <% end -%>
+   -->
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
       <div class="text-center">
